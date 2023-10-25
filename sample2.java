@@ -1,47 +1,50 @@
-package arrays;
+package inheritance1;
 import java.util.Scanner;
-class Demo1
+class B
 {
-	int i,j,m,n;
-	Scanner sc=new Scanner(System.in);
-	int empid[][]=new int[2][2];
+	int cid;
+	int cnum;
+	String cname;
+	Scanner sc = new Scanner(System.in);
 	void get1()
 	{
-		System.out.println("Enter the m and n value:");
-		n=sc.nextInt();
-		m=sc.nextInt();
-		for(i=0;i<n;i++)
-		{
-			for(j=0;j<m;j++)
-			{
-				System.out.println("Enter the array value is:");
-			empid[i][j]=sc.nextInt();
-			}
-			
-		}
+		System.out.println("enter cid is:");
+		cid = sc.nextInt();
 	}
-	void get2()
+	class D1 extends B
 	{
-	
-		for(i=0;i<n;i++)
+		void get2()
 		{
-			for(j=0;j<m;j++)
-			{
-				System.out.println("Your array value is :"+empid[i][j]);
-			}
-			
+			System.out.println("enter cnum is:");
+			cnum = sc.nextInt();
 		}
 	}
-	
+	class D2 extends B
+		{
+			void get3()
+			{
+				System.out.println("enter the cname is:");
+				cname = sc.next();
+			}
+		}
+	class D3 extends B
+	{
+		void get4()
+		{
+			System.out.println("enter cid is:"+cid+"enter cnum is:"+cnum+"enter cname is:"+cname);
+		}
+	}
 }
-
 
 public class sample2 {
 
 	public static void main(String[] args) {
-		Demo1 d1=new Demo1();
-		d1.get1();
-		d1.get2();
+		D3 f1 = new D3();
+		D2 f2 = new D2();
+		D1 f3 = new D1();
+		f1.get2();
+		f2.get3();
+		f3.get3();
 		
 	}
 
